@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use app\enums\Status;
+use app\components\enums\Status;
 use yii\db\ActiveRecord;
 
 /**

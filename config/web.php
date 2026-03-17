@@ -19,7 +19,7 @@ $config = [
             'parsers' => [
                 'application/json' => JsonParser::class,
             ],
-            'cookieValidationKey' => 'iUW4uR0yMrihMIngNxU1h1gM6c-zPVWR',
+            'cookieValidationKey' => $params['cookieValidationKey'],
         ],
         'user' => [
             'identityClass' => 'app\models\User',
