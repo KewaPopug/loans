@@ -45,12 +45,6 @@ return [
 ]
 ```
 
-
-Initialize the config files
-
-    php init
-
-
 DOCKER
 -------------
 
