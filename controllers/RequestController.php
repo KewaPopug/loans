@@ -29,7 +29,6 @@ class RequestController extends Controller
 
         if ($model->validate()) {
             if ($model->save()) {
-                // todo строгий вывод по средством класса
                 Yii::$app->response->statusCode = 201;
                 return [
                     'result' => true,
