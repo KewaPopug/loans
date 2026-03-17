@@ -50,7 +50,7 @@ DOCKER
 
 Обновите пакеты
 
-docker-compose run --rm php composer update --prefer-dist
+    docker-compose run --rm php composer update --prefer-dist
 
 Запустите триггеры установки (создайте код проверки cookie).
 
