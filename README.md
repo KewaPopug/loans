@@ -2,28 +2,28 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px" alt="">
     </a>
-    <h1 align="center">Loans</h1>
+    <h1 align="center">Займы</h1>
     <br />
 </p>
 
-INSTALLATION
+Установка
 ------------
 
-Clone the repository
+Склонируйте репозиторий
 
     git clone https://github.com/KewaPopug/loans.git
 
-Enter the project directory
+Перейдите в директорию
 
     cd loans
 
 
-CONFIGURATION
+Конфигурация
 -------------
 
-### Database
+### БД
 
-Create the file `config/db.php` with real data, for example:
+Создайте файл `config/db.php` с данными, к примеру:
 
 ```php
 return [
@@ -34,10 +34,10 @@ return [
     'charset' => 'utf8',
 ];
 ```
-### Secret string
+### Cookie validation key
 
-Create the file `config/params.php`.
-Set cookie validation key in `config/params.php` file to some random secret string:
+Создайте `config/params.php`.
+Установите cookie validation key `config/params.php` с случайной строкой:
 
 ```php
 return [
@@ -45,33 +45,32 @@ return [
 ]
 ```
 
-You can then access the application through the following URL:
 
-~~~
-http://localhost/basic/web/
-~~~
+Initialize the config files
 
+    php init
 
 
 DOCKER
 -------------
 
-Update your vendor packages
+Обновите пакеты
 
-    docker-compose run --rm php composer update --prefer-dist
+docker-compose run --rm php composer update --prefer-dist
 
-Run the installation triggers (creating cookie validation code)
+Запустите триггеры установки (создайте код проверки cookie).
 
     docker-compose run --rm php composer install    
 
-Start the container
+Запуститe контейнер
 
     docker-compose up -d
 
-Migrate the database
+Мигрируйте базу данных
 
     docker-compose exec php php yii migrate
 
-You can then access the application through the following URL:
+Затем вы сможете получить доступ к приложению по следующему URL-адресу:
 
     http://localhost:80
+
