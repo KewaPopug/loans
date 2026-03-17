@@ -23,7 +23,7 @@ CONFIGURATION
 
 ### Database
 
-Edit the file `config/db.php` with real data, for example:
+Create the file `config/db.php` with real data, for example:
 
 ```php
 return [
@@ -36,10 +36,11 @@ return [
 ```
 ### Secret string
 
+Create the file `config/params.php`.
 Set cookie validation key in `config/params.php` file to some random secret string:
 
 ```php
-[
+return [
     'cookieValidationKey' => '<secret random string goes here>',
 ]
 ```
@@ -58,15 +59,15 @@ DOCKER
 Update your vendor packages
 
     docker-compose run --rm php composer update --prefer-dist
-    
+
 Run the installation triggers (creating cookie validation code)
 
     docker-compose run --rm php composer install    
-    
+
 Start the container
 
     docker-compose up -d
-    
+
 Migrate the database
 
     docker-compose exec php php yii migrate
