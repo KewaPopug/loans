@@ -17,13 +17,31 @@ Enter the project directory
 
     cd loans
 
-Set cookie validation key in `config/web.php` file to some random secret string:
+
+CONFIGURATION
+-------------
+
+### Database
+
+Edit the file `config/db.php` with real data, for example:
 
 ```php
-'request' => [
-    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'pgsql:host=postgres;dbname=loans',
+    'username' => 'user',
+    'password' => 'password',
+    'charset' => 'utf8',
+];
+```
+### Secret string
+
+Set cookie validation key in `config/params.php` file to some random secret string:
+
+```php
+[
     'cookieValidationKey' => '<secret random string goes here>',
-],
+]
 ```
 
 You can then access the application through the following URL:
@@ -54,20 +72,3 @@ Migrate the database
 You can then access the application through the following URL:
 
     http://localhost:80
-
-CONFIGURATION
--------------
-
-### Database
-
-Edit the file `config/db.php` with real data, for example:
-
-```php
-return [
-    'class' => 'yii\db\Connection',
-    'dsn' => 'pgsql:host=postgres;dbname=loans',
-    'username' => 'user',
-    'password' => 'password',
-    'charset' => 'utf8',
-];
-```
