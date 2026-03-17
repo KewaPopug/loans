@@ -51,7 +51,9 @@ http://localhost/basic/web/
 ~~~
 
 
-### Install with Docker
+
+DOCKER
+-------------
 
 Update your vendor packages
 
