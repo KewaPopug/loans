@@ -6,17 +6,21 @@ use app\components\services\RequestService;
 use app\models\Request;
 use Yii;
 use yii\db\Exception;
+use yii\filters\VerbFilter;
 use yii\rest\Controller;
 
 class RequestController extends Controller
 {
-    public function __construct(
-        $id,
-        $module,
-        private readonly RequestService $requestService,
-        $config = []
-    ) {
-        parent::__construct($id, $module, $config);
+    public function behaviors(): array
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::class,
+                'actions' => [
+                    'create' => ['POST'],
+                ],
+            ],
+        ];
     }
 
     /**

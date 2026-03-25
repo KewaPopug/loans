@@ -14,8 +14,7 @@ class ProcessorService
     public function __construct(
         readonly private RequestService $requestService,
     )
-    {
-    }
+    {}
 
     /**
      * @throws Exception

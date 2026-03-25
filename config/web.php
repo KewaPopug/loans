@@ -1,7 +1,7 @@
 <?php
 
-use yii\rest\UrlRule;
 use yii\web\JsonParser;
+use yii\web\Response;
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
@@ -15,6 +15,10 @@ $config = [
         '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
+        'response' => [
+            'class' => Response::class,
+            'format' => Response::FORMAT_JSON,
+        ],
         'request' => [
             'parsers' => [
                 'application/json' => JsonParser::class,

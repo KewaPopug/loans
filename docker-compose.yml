@@ -1,6 +1,8 @@
 services:
   php:
-    image: yiisoftware/yii2-php:8.3-apache
+    build:
+      context: .
+      dockerfile: docker/PHP.DockerFile
     volumes:
       - ./:/app
     ports:

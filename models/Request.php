@@ -24,14 +24,12 @@ class Request extends ActiveRecord
     public function rules(): array
     {
         return [
-
             [['user_id', 'amount', 'term'], 'required'],
-            [['user_id', 'term', 'status'], 'default', 'value' => null],
-            [['user_id', 'term', 'status'], 'integer'],
-            [['amount'], 'number'],
-            [['status'], 'default', 'value' => 0],
-            ['user_id', 'validateApprovedRequest']
-//            [['status'], 'range' => Status::values(), 'value' => 0],
+            [['user_id', 'term', 'status', 'amount'], 'integer'],
+            /** @see self::validateApprovedRequest() */
+            ['user_id', 'validateApprovedRequest'],
+            ['status', 'default', 'value' => 0],
+            ['status', 'in', 'range' => Status::values()],
         ];
     }
 
