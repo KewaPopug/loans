@@ -10,11 +10,13 @@ done
 
 echo "Postgres is ready"
 
-echo "Installing dependencies..."
-composer install --no-interaction --prefer-dist
+if [ ! -d "vendor" ]; then
+  echo "Installing composer dependencies..."
+  composer install --no-interaction --prefer-dist
+fi
 
 echo "Running migrations..."
 php yii migrate --interactive=0
 
-echo "Starting Apache..."
-apache2-foreground
+echo "Starting php-fpm..."
+php-fpm
