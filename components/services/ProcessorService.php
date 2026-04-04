@@ -26,6 +26,7 @@ class ProcessorService
         $requests = $this->requestService->findWaitRequest()->all();
 
         foreach ($requests as $request) {
+            sleep($filter->delay);
             $transaction = Yii::$app->db->beginTransaction();
             try {
                 $this->setStatus($request, $filter->delay);
@@ -61,7 +62,6 @@ class ProcessorService
      */
     private function getRandomStatus($delay): int
     {
-        sleep($delay);
         $approved = random_int(1, 10) === 1;
 
         return $approved
